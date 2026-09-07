@@ -100,7 +100,6 @@ end
 function s.tg2(e, tp, eg, ep, ev, re, r, rp, chk)
     if chk == 0 then
         return Duel.IsExistingMatchingCard(s.meklord_filter, tp, LOCATION_ONFIELD, 0, 1, nil)
-            and Duel.IsExistingMatchingCard(s.field_spell_filter, tp, LOCATION_DECK, 0, 1, nil)
     end
     local g = Duel.GetMatchingGroup(s.meklord_filter, tp, LOCATION_ONFIELD, 0, nil)
     Duel.SetOperationInfo(0, CATEGORY_DESTROY, g, 1, 0, 0)
