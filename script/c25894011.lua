@@ -44,6 +44,7 @@ function s.initial_effect(c)
 	e4:SetProperty(EFFECT_FLAG_CARD_TARGET)
 	e4:SetRange(LOCATION_MZONE)
 	e4:SetCountLimit(1,{id,2})
+	e4:SetCondition(s.eqcon)
 	e4:SetTarget(s.eqtg)
 	e4:SetOperation(s.eqop)
 	c:RegisterEffect(e4)
@@ -118,6 +119,9 @@ function s.spop(e,tp,eg,ep,ev,re,r,rp)
 	if Duel.SpecialSummon(c,0,tp,tp,true,false,POS_FACEUP)~=0 then
 		c:CompleteProcedure()
 	end
+end
+function s.eqcon(e,tp,eg,ep,ev,re,r,rp)
+	return Duel.IsMainPhase()
 end
 
 function s.eqfilter(c)
