@@ -147,7 +147,7 @@ end
 function s.eqop(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
 	local tc=Duel.GetFirstTarget()
-	if tc and tc:IsFaceup() and tc:IsRelateToEffect(e) and tc:IsMonster() then
+	if tc and tc:IsFaceup() and c:IsLocation(LOCATION_MZONE) and tc:IsRelateToEffect(e) and tc:IsMonster() then
 		s.equipop(c,e,tp,tc)
 	end
 end
