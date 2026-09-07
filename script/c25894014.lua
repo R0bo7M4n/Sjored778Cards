@@ -69,7 +69,7 @@ end
 
 function s.cfilter(c, tp)
     return c:IsSetCard(SET_MEKLORD) and c:IsPreviousControler(tp) and c:IsPreviousLocation(LOCATION_MZONE) 
-        and c:IsPreviousPosition(POS_FACEUP)
+        and c:IsPreviousPosition(POS_FACEUP) and c:IsReason(REASON_EFFECT)
 end
 
 function s.tdcon(e, tp, eg, ep, ev, re, r, rp)
