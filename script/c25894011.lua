@@ -80,7 +80,7 @@ function s.desfilter(c)
 end
 function s.thfilter(c,ex)
        	if c==ex then return false end
-       	return c:ListsArchetype(SET_MEKLORD) and c:IsAbleToHand()
+       	return (c:IsSetCard(0x13) or c:IsSetCard(0x3013) or c:IsSetCard(0x6013) or c:IsSetCard(0x9013)) and c:IsAbleToHand()
 end
 function s.target(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then
